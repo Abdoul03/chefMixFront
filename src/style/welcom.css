@@ -1,0 +1,14 @@
+.cont{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.left{
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 30px;
+    /* color: gray; */
+    color: rgb(70, 195, 124);
+}
+.chef img{
+    padding-bottom: 30px;
+}

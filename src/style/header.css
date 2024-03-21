@@ -1,0 +1,19 @@
+.contener{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.navigue{
+    margin-right: 50px;
+}
+nav{
+    display: flex;
+    gap:15px ;
+    padding-right: -100px;
+}
+.menu{
+    padding-top: 15px;
+    font-size: 20px;
+    /* color: gray; */
+    color: rgb(70, 195, 124);
+}
