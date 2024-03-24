@@ -1,4 +1,3 @@
-// import connecting_teams from "../assets/connecting_teams.svg"
 import Chef from "../assets/chef.svg";
 import Header from "../components/Header";
 import "../style/welcom.css";
@@ -6,7 +5,7 @@ import "../style/welcom.css";
 export default function Welcome() {
   return (
     <div>
-      <Header />
+      <Header scroll={scroll} />
       <div className="cont flex flex-row justify-center h-full">
         <div className="left w-2/4 text-center ">
           <h2>

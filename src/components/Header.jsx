@@ -1,20 +1,32 @@
 import { NavLink } from "react-router-dom";
 import "../style/header.css";
-// import logo from "../assets/logo.jpg"
+import { useState } from "react";
+// import { MenuRounded } from "@mui/icons-material";
 
 const Header = () => {
+  //change color on scroll
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 60) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+  window.addEventListener("scroll", changeColor);
+
   return (
-    <div className="contener">
+    <div className={color ? "connect-scroll" : "contener"}>
       <div className="logo">
-        {/* <img src={logo} alt="logo" /> */}
-        {/* <h5>MiX it Cook it Shart it</h5> */}
+        {/* <MenuRounded fontSize="large" /> */}
+        <p>chefMix</p>
       </div>
       <div className="navigue">
         <nav>
-          <NavLink className="connect" to="/connexion">
+          <NavLink className="connect" to="/Connexion">
             Connexion
           </NavLink>
-          <NavLink className="inscrip" to="/inscription">
+          <NavLink className="inscrip" to="/Inscription">
             Inscription
           </NavLink>
         </nav>

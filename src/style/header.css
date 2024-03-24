@@ -2,12 +2,28 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
     transition: 0.6s;
+}
+.connect-scroll{
+    /* background-color: #D6F1DF; */
+    background-color: black;
+}
+.logo{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+}
+.logo p{
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 15px;
+    color: #385046
 }
 .navigue{
     margin-top: 15px;
@@ -22,7 +38,7 @@ nav{
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 20px;
-    color: #193B2D
+    /* color: #193B2D */
 }
 .connect{
     border: 2px solid #2B9A66;
