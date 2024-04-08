@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "../style/Insc.css";
 
 const Inscription = () => {
@@ -23,7 +24,10 @@ const Inscription = () => {
         <label htmlFor="psw">Mot de Passe</label>
         <input type="password" name="password" id="psw" />
         <input type="submit" value="s'inscrire" />
-        <p>Vous avez deja un compte ?</p>
+        <p>
+          Vous avez deja un compte ?{" "}
+          <NavLink to="/connexion">Se connecter</NavLink>
+        </p>
       </form>
     </div>
   );
