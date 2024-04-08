@@ -1,7 +1,7 @@
 const Inscription = () => {
   return (
-    <div className="form">
-      <form action="" method="post">
+    <div>
+      <form action="" method="post" className="form">
         <p>
           <label htmlFor="nom">Nom</label>
           <input type="text" name="nom" id="Nom" />

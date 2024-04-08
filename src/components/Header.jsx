@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import "../style/header.css";
 import { useState } from "react";
 // import { MenuRounded } from "@mui/icons-material";
@@ -20,16 +19,6 @@ const Header = () => {
       <div className="logo">
         {/* <MenuRounded fontSize="large" /> */}
         <p>chefMix</p>
-      </div>
-      <div className="navigue">
-        <nav>
-          <NavLink className="connect" to="/Connexion">
-            Connexion
-          </NavLink>
-          <NavLink className="inscrip" to="/Inscription">
-            Inscription
-          </NavLink>
-        </nav>
       </div>
     </div>
   );
