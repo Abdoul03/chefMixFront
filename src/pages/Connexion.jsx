@@ -1,15 +1,27 @@
+import "../style/conn.css";
+
 const Connexion = () => {
   return (
-    <div>
-      <form action="connection" className="form">
-        <h2>Connection</h2>
-        <label htmlFor="teel">Telephone</label>
-        <input type="tel" name="telephone" id="teel" />
-        <br />
-        <label htmlFor="psw">Mot de passe</label>
+    <div className="frm_body">
+      <form action="" method="post">
+        <h2>CONNEXION</h2>
+        <hr />
+        <div className="form_bas">
+          <div>
+            <label htmlFor="nom" className="ind">
+              Indicatif
+            </label>
+            <input type="tel" name="nom" id="Nom" />
+          </div>
+          <div>
+            <label htmlFor="tel">Telephone</label>
+            <input type="tel" name="telephone" id="tel" />
+          </div>
+        </div>
+        <label htmlFor="psw">Mot de Passe</label>
         <input type="password" name="password" id="psw" />
-        <br />
-        <button>Se connecter</button>
+        <input type="submit" value="Se connecter" />
+        <p>Vous n&apos;savez pas un compte ?</p>
       </form>
     </div>
   );
