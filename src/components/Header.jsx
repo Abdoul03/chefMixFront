@@ -19,7 +19,9 @@ const Header = () => {
     <div className={color ? "connect-scroll" : "contener"}>
       <div className="logo">
         {/* <MenuRounded fontSize="large" /> */}
-        <p>chefMix</p>
+        <NavLink to="/" className="p">
+          chefMix
+        </NavLink>
       </div>
       <div className="navigue">
         <nav className="menu">
