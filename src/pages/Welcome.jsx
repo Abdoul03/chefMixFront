@@ -1,6 +1,7 @@
 import Chef from "../assets/chef.svg";
 import Header from "../components/Header";
 import "../style/welcom.css";
+import Clients from "./Clients";
 
 export default function Welcome() {
   return (
@@ -21,6 +22,7 @@ export default function Welcome() {
           <img src={Chef} alt="chef" />
         </div>
       </div>
+      <Clients />
     </div>
   );
 }

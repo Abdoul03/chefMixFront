@@ -2,13 +2,16 @@ import { NavLink } from "react-router-dom";
 import "../style/Insc.css";
 
 const Inscription = () => {
+  const handelSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <div>
       <NavLink to="/" className="p ml-6 mt-6 ">
         chefMix
       </NavLink>
       <div className="frm_body">
-        <form action="" method="post">
+        <form action="" method="post" onSubmit={handelSubmit}>
           <h2>INSCRIPTION</h2>
           <hr />
           <div className="form_bas">
