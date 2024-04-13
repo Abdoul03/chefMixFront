@@ -1,7 +1,9 @@
-import Chef from "../assets/chef.svg";
+import connecting_teams from "../assets/connecting_teams.svg";
 import Header from "../components/Header";
 import "../style/welcom.css";
 import Clients from "./Clients";
+import Cuisnier from "./Cuisnier";
+import Liveurs from "./Liveurs";
 
 export default function Welcome() {
   return (
@@ -19,10 +21,12 @@ export default function Welcome() {
           </h2>
         </div>
         <div className="chef w-2/4 pt-0.5 pl-0.5">
-          <img src={Chef} alt="chef" />
+          <img src={connecting_teams} alt="chef" />
         </div>
       </div>
       <Clients />
+      <Cuisnier />
+      <Liveurs />
     </div>
   );
 }
