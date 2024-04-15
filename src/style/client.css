@@ -1,18 +1,9 @@
-.client{
-    /* font-weight: bold; */
+.left h2{
     font-size: 30px;
-    color: #193B2D
 }
-.t2{
-    font-weight: bold;
-    font-size: 30px;
-    color: #193B2D 
+.left p{
+    font-size: 25px;
 }
-.stores{
-    display: flex;
-    align-items: center;
-    width: 140px;
-    justify-content: space-between;
-    flex-direction: row;
-    gap: 12px;
+.app{
+    height: 25rem;
 }
