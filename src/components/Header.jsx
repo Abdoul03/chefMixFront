@@ -20,7 +20,7 @@ const Header = () => {
       <div className="logo">
         {/* <MenuRounded fontSize="large" /> */}
         <NavLink to="/" className="p">
-          chefMix
+          ChefMix
         </NavLink>
       </div>
       <div className="navigue">

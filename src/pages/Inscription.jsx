@@ -5,6 +5,7 @@ const Inscription = () => {
   const handelSubmit = (event) => {
     event.preventDefault();
   };
+
   return (
     <div>
       <NavLink to="/" className="p ml-6 mt-6 ">
