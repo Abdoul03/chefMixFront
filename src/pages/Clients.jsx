@@ -12,7 +12,7 @@ const Clients = () => {
     axios
       .get("http://localhost:5000/utilisateur")
       .then((res) => {
-        setUsers(res.data.data);
+        setUsers(res.data);
       })
       .catch((error) => {
         alert("vous avez une erreur");
@@ -27,13 +27,8 @@ const Clients = () => {
           C&apos;est simple telecharger notre Application Gratuitement sur
           Google playStore ou sur AppStore inscrivez-vous, vous avez la
           possibilite de suivre un cuisinier d&apos;aimer un nourriture. Passer
-          votre commande renseignez votre position et un livreur vous livrera
-          votre commande. Nous avons plus de
-          <span>
-            {users.map((client) => (
-              <div key={client._id}>{client.lenght}</div>
-            ))}
-          </span>
+          votre commande renseignez votre position et le livreur le plus proche
+          vous livrera votre commande. <br /> Nous avons {users.length} clients
         </p>
       </div>
       <div className="rigth w-2/4 pt-10 ">

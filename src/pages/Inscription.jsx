@@ -10,9 +10,23 @@ const Inscription = () => {
   const [telephone, setTelephone] = useState("");
   const [password, setPassWord] = useState("");
   const navigate = useNavigate();
+  const [estClient, setEstClient] = useState(false);
+  const [estChef, setEstChef] = useState(false);
 
-  const handelSubmit = (event) => {
-    event.preventDefault();
+  const ChangementClient = (e) => {
+    setEstClient(e.target.checked);
+    // Assurer qu'une seule case à cocher est cochée à la fois
+    setEstChef(false);
+  };
+
+  const ChangementChef = (e) => {
+    setEstChef(e.target.checked);
+    // Assurer qu'une seule case à cocher est cochée à la fois
+    setEstClient(false);
+  };
+
+  //////// save a new Client
+  const inscrireClient = () => {
     const data = {
       nom,
       prenom,
@@ -24,14 +38,50 @@ const Inscription = () => {
     axios
       .post("http://localhost:5000/utilisateur/inscriptionUser", data)
       .then(() => {
-        alert("Vous vous etes inscrit aavec succes onnecter vous");
+        alert("Bienvenue parmis nos Client Connecter vous !");
         navigate("/connexion");
       })
       .catch((error) => {
-        alert("Une erreur ses produit lors de votre inscription");
+        alert("Une erreur ses produit lors de votre inscription !");
         console.log(error);
       });
   };
+  //////// save a new Cuisinier
+  const inscrireChef = () => {
+    const data = {
+      nom,
+      prenom,
+      email,
+      telephone,
+      password,
+    };
+
+    axios
+      .post("http://localhost:5000/chef/inscriptionChef", data)
+      .then(() => {
+        alert("Bienvenue parmis nos cuisinier connecter vous !");
+        navigate("/connexion");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Une erreur ses produit lors de votre inscription !");
+      });
+  };
+
+  const handelSubmit = (event) => {
+    event.preventDefault();
+    if (estClient) {
+      inscrireClient();
+    } else if (estChef) {
+      inscrireChef();
+    } else {
+      alert("veillez selectionner votre caegorie");
+    }
+  };
+
+  // const handelLivreur = ()=>{
+
+  // }
 
   return (
     <div>
@@ -88,6 +138,25 @@ const Inscription = () => {
             value={password}
             onChange={(e) => setPassWord(e.target.value)}
           />
+          <p>Vous Etes ?</p>
+          <div className="flex gap-3">
+            <label htmlFor="client">Client</label>
+            <input
+              type="checkbox"
+              id="client"
+              onChange={ChangementClient}
+              checked={estClient}
+            />
+            <label htmlFor="cuicinier">Cuisinier</label>
+            <input
+              type="checkbox"
+              id="cuisinier"
+              onChange={ChangementChef}
+              checked={estChef}
+            />
+            {/* <label htmlFor="livreur">Livreur</label>
+            <input type="checkbox" onChange={handelLivreur} /> */}
+          </div>
           <input type="submit" value="s'inscrire" />
           <p>
             Vous avez deja un compte ?{" "}
