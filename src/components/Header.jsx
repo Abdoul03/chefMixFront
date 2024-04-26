@@ -1,24 +1,13 @@
 import { NavLink } from "react-router-dom";
 import "../style/header.css";
-// import { useState } from "react";
-// import { MenuRounded } from "@mui/icons-material";
 
 const Header = () => {
-  // change color on scroll
-  // const [color, setColor] = useState(false);
-  // const changeColor = () => {
-  //   if (window.scrollY >= 60) {
-  //     setColor(true);
-  //   } else {
-  //     setColor(false);
-  //   }
-  // };
-  // window.addEventListener("scroll", changeColor);
-
+  const handelClike = () => {
+    console.log("je suis cliker");
+  };
   return (
     <div className="contener">
-      <div className="logo">
-        {/* <MenuRounded fontSize="large" /> */}
+      <div className="logo" onClick={handelClike}>
         <NavLink to="/" className="p">
           ChefMix
         </NavLink>
