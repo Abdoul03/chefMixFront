@@ -6,6 +6,8 @@ import axios from "axios";
 const Connexion = () => {
   const [telephone, setTelephone] = useState("");
   const [password, setPassWord] = useState("");
+  const [chef, setChef] = useState({});
+
   const navigate = useNavigate();
 
   const handelSubmit = (event) => {
@@ -15,10 +17,12 @@ const Connexion = () => {
       password,
     };
     axios
-      .post("http://localhost:5000/utilisateur/login", data)
-      .then(() => {
+      .post("http://localhost:5000/chef/login", data)
+      .then((res) => {
         alert("Connexion réussie");
-        navigate("/UserPage");
+        setChef(res.data.token);
+        console.log(res.data.token);
+        navigate("/ChefPages");
       })
       .catch((error) => {
         alert("Erreur de Connection");

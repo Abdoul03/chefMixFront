@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,9 +31,8 @@ nav{
 }
 .menu{
     padding-top: 15px;
-    padding-bottom: 15px;
     font-size: 20px;
-    /* color: #193B2D */
+   
 }
 .connect{
     border: 2px solid #2B9A66;

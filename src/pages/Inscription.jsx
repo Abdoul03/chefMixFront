@@ -38,8 +38,8 @@ const Inscription = () => {
     axios
       .post("http://localhost:5000/utilisateur/inscriptionUser", data)
       .then(() => {
-        alert("Bienvenue parmis nos Client Connecter vous !");
-        navigate("/connexion");
+        alert("Bienvenue telecharger l'application Chefmix Pour continuer !");
+        navigate("/");
       })
       .catch((error) => {
         alert("Une erreur ses produit lors de votre inscription !");

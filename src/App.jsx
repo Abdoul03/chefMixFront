@@ -3,7 +3,7 @@ import Welcome from "./pages/Welcome";
 import "./App.css";
 import Inscription from "./pages/Inscription";
 import Connexion from "./pages/Connexion";
-import UserPages from "./pages/UserPages";
+import ChefPages from "./pages/ChefPages";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -20,8 +20,8 @@ export default function App() {
       element: <Connexion />,
     },
     {
-      path: "/UserPage",
-      element: <UserPages />,
+      path: "/ChefPages",
+      element: <ChefPages />,
     },
   ]);
   return (
