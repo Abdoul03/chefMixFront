@@ -1,25 +1,26 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+// import axios from "axios";
+// import { useEffect, useState } from "react";
 
-const ChefPages = () => {
+const ChefPages = ({ chefs }) => {
   // const [nom, setNom] = useState("");
   // const [prenom, setPrenom] = useState("");
   // const [email, setEmail] = useState("");
   // const [adresse, setAdresse] = useState("");
   // const [telephone, setTelephone] = useState("");
   // const [profil, setProfil] = useState("");
-  const [chefs, setChefs] = useState([]);
+  // const [chefs, setChefs] = useState([]);
   // const { id } = useParams();
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/chef/`)
-      .then((res) => {
-        setChefs(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5000/chef/`)
+  //     .then((res) => {
+  //       setChefs(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
   return (
     <>
       {chefs.map((chef) => (
