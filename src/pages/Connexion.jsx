@@ -2,7 +2,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "../style/conn.css";
 import { useState } from "react";
 import axios from "axios";
-// import * as jwt from "jwt-decode";
 
 const Connexion = () => {
   const [telephone, setTelephone] = useState("");
@@ -20,16 +19,8 @@ const Connexion = () => {
       .post("http://localhost:5000/chef/login", data)
       .then((res) => {
         alert("Connexion réussie");
-        ////////without Token
-        console.log(res.data.id);
-        // const token = res.data.token;
-        // //// Décoder le token JWT pour obtenir les données utilisateur
-        // const decodedToken = jwt(token);
-        // console.log(decodedToken);
-        // // console.log(token);
-        // //// Stocker les données utilisateur dans l'état du chef
-        // setChefs(decodedToken);
-        // navigate("/ChefPages", { chefs });
+        setChefs(res.data);
+        navigate("/ChefPages", { chefs });
       })
       .catch((error) => {
         alert("Erreur de Connection");
@@ -63,7 +54,7 @@ const Connexion = () => {
           />
           <input type="submit" value="Se connecter" />
           <p>
-            Vous n&apos;savez pas un compte ?{" "}
+            Vous n&apos;savez pas de compte ?{" "}
             <NavLink to="/inscription">Inscrivez-vous</NavLink>
           </p>
         </form>
