@@ -19,8 +19,12 @@ const Connexion = () => {
       .post("http://localhost:5000/chef/login", data)
       .then((res) => {
         alert("Connexion réussie");
-        setChefs(res.data);
-        navigate("/ChefPages", { chefs });
+        const { cuisinier, token } = res.data;
+        const { nom, prenom, email, adresse, telephone } = cuisinier;
+        setChefs({ nom, prenom, email, adresse, telephone });
+        localStorage.setItem("token", token);
+        // console.log(res.data.nom);
+        navigate("/ChefPages", { state: { chefs } });
       })
       .catch((error) => {
         alert("Erreur de Connection");

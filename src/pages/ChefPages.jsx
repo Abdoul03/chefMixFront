@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
+// import { useLocation } from "react-router-dom";
 
-const ChefPages = ({ chefs }) => {
-  console.log(chefs);
+const ChefPages = ({ location }) => {
+  // const { chefs } = location.state;
+  const { nom, prenom, email, adresse, telephone } = location.state.chefs;
+
   return (
     <>
-      <h1>Bonjour</h1>
+      <h1>{nom}</h1>
     </>
   );
 };
