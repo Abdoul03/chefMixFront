@@ -1,12 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "../style/conn.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Connexion = () => {
   const [telephone, setTelephone] = useState("");
   const [password, setPassWord] = useState("");
-  const [chefs, setChefs] = useState({});
+  const [chefs, setChefs] = useState([]);
   const navigate = useNavigate();
 
   const handelSubmit = (event) => {
@@ -19,18 +19,23 @@ const Connexion = () => {
       .post("http://localhost:5000/chef/login", data)
       .then((res) => {
         alert("Connexion réussie");
-        const { cuisinier, token } = res.data;
-        const { nom, prenom, email, adresse, telephone } = cuisinier;
-        setChefs({ nom, prenom, email, adresse, telephone });
-        localStorage.setItem("token", token);
-        // console.log(res.data.nom);
-        navigate("/ChefPages", { state: { chefs } });
+        setChefs(res.data.cuisinier);
+        console.log(chefs);
+        // navigate("/ChefPages", { replace: true, state: { chefs } });
       })
       .catch((error) => {
         alert("Erreur de Connection");
         console.log(error);
       });
   };
+
+  useEffect(() => {
+    // Vérifier si chefs contient des données
+    if (chefs.length > 0) {
+      // Déclencher la navigation vers ChefPages
+      navigate("/ChefPages", { replace: true, state: { chefs } });
+    }
+  }, [chefs, navigate]);
   return (
     <div>
       <NavLink to="/" className="p ml-6 mt-6">

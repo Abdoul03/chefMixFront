@@ -1,13 +1,15 @@
-/* eslint-disable react/prop-types */
-// import { useLocation } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { useLocation } from "react-router-dom";
 
-const ChefPages = ({ location }) => {
-  // const { chefs } = location.state;
-  const { nom, prenom, email, adresse, telephone } = location.state.chefs;
+const ChefPages = (props) => {
+  const location = useLocation();
+  console.log(location);
 
   return (
     <>
-      <h1>{nom}</h1>
+      <h1 className="text-2xl text-gray-700 text-center pt-5">
+        Bienvenue {location.state.chefs} sur votre tableau de bord
+      </h1>
     </>
   );
 };
