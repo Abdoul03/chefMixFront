@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "../style/conn.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const Connexion = () => {
@@ -21,7 +21,7 @@ const Connexion = () => {
         alert("Connexion réussie");
         setChefs(res.data.cuisinier);
         console.log(chefs);
-        // navigate("/ChefPages", { replace: true, state: { chefs } });
+        navigate("/ChefPages", { replace: true, state: { chefs } });
       })
       .catch((error) => {
         alert("Erreur de Connection");
@@ -29,13 +29,6 @@ const Connexion = () => {
       });
   };
 
-  useEffect(() => {
-    // Vérifier si chefs contient des données
-    if (chefs.length > 0) {
-      // Déclencher la navigation vers ChefPages
-      navigate("/ChefPages", { replace: true, state: { chefs } });
-    }
-  }, [chefs, navigate]);
   return (
     <div>
       <NavLink to="/" className="p ml-6 mt-6">
