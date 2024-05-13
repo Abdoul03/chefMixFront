@@ -19,9 +19,10 @@ const Connexion = () => {
       .post("http://localhost:5000/chef/login", data)
       .then((res) => {
         alert("Connexion réussie");
+        // setChefs(res.data);
         setChefs(res.data.cuisinier);
         console.log(chefs);
-        navigate("/ChefPages", { replace: true, state: { chefs } });
+        // navigate("/ChefPages", { state: { chefs } });
       })
       .catch((error) => {
         alert("Erreur de Connection");

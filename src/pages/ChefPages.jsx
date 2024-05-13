@@ -8,7 +8,7 @@ const ChefPages = (props) => {
   return (
     <>
       <h1 className="text-2xl text-gray-700 text-center pt-5">
-        Bienvenue {location.state.chefs.prenom} sur votre tableau de bord
+        Bienvenue sur votre tableau de bord {location.state.chefs.prenom}
       </h1>
     </>
   );
