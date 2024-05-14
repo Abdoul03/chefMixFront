@@ -22,7 +22,7 @@ const Connexion = () => {
         // setChefs(res.data);
         setChefs(res.data.cuisinier);
         console.log(chefs);
-        // navigate("/ChefPages", { state: { chefs } });
+        navigate("/ChefPages", { state: { chefs } });
       })
       .catch((error) => {
         alert("Erreur de Connection");
