@@ -20,9 +20,9 @@ const Connexion = () => {
       .then((res) => {
         alert("Connexion réussie");
         // setChefs(res.data);
-        setChefs(res.data.cuisinier);
+        setChefs(res.data);
         console.log(chefs);
-        navigate("/ChefPages", { state: { chefs } });
+        // navigate("/ChefPages", { state: { chefs } });
       })
       .catch((error) => {
         alert("Erreur de Connection");

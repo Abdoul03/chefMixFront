@@ -1,40 +1,42 @@
-// import google from "../assets/Google play.png";
-// import Apple from "../assets/AppStore.svg";
-import "../style/client.css";
-import online from "../assets/online_groceries.svg";
-import { useEffect, useState } from "react";
-import axios from "axios";
-
 const Clients = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/utilisateur")
-      .then((res) => {
-        setUsers(res.data);
-      })
-      .catch((error) => {
-        alert("vous avez une erreur");
-        console.log(error);
-      });
-  }, []);
   return (
-    <div className="contener_flex flex flex-row justify-center mt-70 ml-20">
-      <div className="left w-2/4 text-center font-bold ml-5">
-        <h2 className="t2"> Comment ca Marche ?</h2>
-        <p>
-          C&apos;est simple telecharger notre Application Gratuitement sur
-          Google playStore ou sur AppStore inscrivez-vous, vous avez la
-          possibilite de suivre un cuisinier d&apos;aimer un nourriture. Passer
-          votre commande renseignez votre position et le livreur le plus proche
-          vous livrera votre commande. <br /> Nous avons {users.length} clients
+    <div className="flex flex-col justify-center mt-70 bg-white">
+      <div>
+        <h2 className="text-center font-serif text-xl pt-5">
+          {" "}
+          Comment ca marche ?
+        </h2>
+        <p className="font-sans font-bold text-4xl text-orange-500">
+          C&apos;est tres Simple !
         </p>
       </div>
-      <div className="rigth w-2/4 pt-10 ">
-        <img src={online} alt="App" className="app" />
-        {/* <img src={Apple} alt="AppStore" />
-        <img src={google} alt="playStore" width="140px" /> */}
+      <div className="flex flex-row justify-between pt-20">
+        <div>
+          <div></div>
+          <p className="font-semibold text-2xl">Indiquez nous ou vous etes</p>
+          <span>
+            Nous vous indiquerons les partenaires a proximite chez qui vous
+            pouvez commander
+          </span>
+        </div>
+        <div>
+          <div></div>
+          <p className="font-semibold text-2xl">
+            Trouvez ce dont vous avez envie
+          </p>
+          <span>
+            Cherchez par article ou repas, par partenaire ou type de cuisinie.
+          </span>
+        </div>
+        <div>
+          <div></div>
+          <p className="font-semibold text-2xl">
+            Commandez a livrer ou a emporter
+          </p>
+          <span>
+            Nous vous tiendrons au courant du deroulement de votre commande.
+          </span>
+        </div>
       </div>
     </div>
   );
